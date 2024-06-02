@@ -20,6 +20,6 @@ Die Notizapp macht es den Benutzer (Client) möglich, mittels Desktop-App oder W
 ## Funktionen der WebApp
 
 ### Erstellen einer Notiz
-![Erstellen einer Notiz](./)
-![Erstellen einer Notiz] 
+![Erstellen einer Notiz](./BilderDoku/Web/Notizhinzufuegen_1.png)
+![Erstellen einer Notiz](./BilderDoku/Web/Notizhinzufuegen_2.png)
 
