@@ -334,3 +334,28 @@ classDiagram
 ```
 
 
+## Quellenverzeichnis
+
+### Spring-Boot Server
+#### [Spring-Boot]()
+#### [JSON](https://www.json.org/json-en.html)
+
+### WPF-Client
+#### [C#](https://learn.microsoft.com/de-de/dotnet/csharp/)
+#### [JSON](https://www.json.org/json-en.html)
+
+### WebApp-Client
+#### [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+#### [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
+#### [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+#### [JSON](https://www.json.org/json-en.html)
+
+### MongoDB Datenbank
+#### [MongoDB](https://www.mongodb.com/docs/)
+
+### IDE & Nuggets
+#### [WebStrom 2024.1.2](https://www.jetbrains.com/webstorm/download/download-thanks.html?platform=windows)
+#### [IntelliJ IDEA 2024.1.1](https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows)
+   - ###### [Spring Boot Starter Data MongoDB 3.2.5](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb/1.1.0.RELEASE)
+   - ###### [Spring Boot Starter Web 3.2.5](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web)
+#### [Visual Studio 2022 17.9.7](https://visualstudio.microsoft.com/de/thank-you-downloading-visual-studio/?sku=Community&channel=Release&version=VS2022&source=VSLandingPage&cid=2030&passive=false)
