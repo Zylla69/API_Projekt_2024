@@ -324,12 +324,13 @@ In Zukunft kann die Notiz-App um neue Funktionen erweitert werden, wie die Organ
 ### Klassendiagramm WPF-Client
 ```mermaid
 classDiagram
-    Home o-- Login
-    Home o-- Register
-    Home o-- PaswordForgotten
-    Home o-- Delete
-    Home o-- Chat
-    Home o-- Message
+    MainWindow o-- Notiz
+
+    class MainWindow {
+    }
+
+    class Notiz {
+    }
 ```
 
 
