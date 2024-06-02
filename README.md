@@ -40,7 +40,7 @@ Um eine Notiz zu Ändern muss man wie im Schritt zuvor eine der bereits vorhande
 ### Löschen der Notiz
 
 ![Löschen der Notiz](./BilderDoku/Web/NotizAnzeigen.png)
-![Löschen der Notiz](.BilderDoku/Web/NotizSpeichern.png)<br>
+![Löschen der Notiz](./BilderDoku/Web/NotizSpeichern.png)<br>
 Will man die Notiz doch Löschen, so drückt man einfach den Löschen Knopf und der Server empfängt den Befehl zum löschen der Notiz.<br>
 
 ## Funktionen der WPF-Anwendung
