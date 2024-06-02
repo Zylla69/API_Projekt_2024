@@ -31,13 +31,14 @@
         <TextBox x:Name="Ueberschrift" GotFocus="Ueberschrift_GotFocus" LostFocus="Ueberschrift_LostFocus" Grid.Row="1" Grid.Column="0" Margin="10,49,10,494" TextWrapping="Wrap" AcceptsReturn="True" FontSize="23" Grid.ColumnSpan="5" />
 
         <!-- Buttons Section -->
-        <StackPanel Grid.Row="1" Grid.Column="5" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,528,0,0" Width="215" Height="66">
+        <StackPanel Grid.Row="1" Grid.Column="5" Orientation="Vertical" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,510,0,0" Width="215" Height="84">
             <Button x:Name="speichern" Content="Speichern" Click="speichern_Click"  Margin="0,0,15,5" Width="168" />
             <Button x:Name="loeschen" Content="Löschen" Click="loeschen_Click" Margin="0,0,15,5" Width="168"/>
+            <Button x:Name="abbrechen" Content="Abbrechen" Click="abbrechen_Click" Margin="0,0,15,5" Width="168"/>
         </StackPanel>
 
         <!-- Title List -->
-        <ListBox x:Name="notizlist" Grid.Row="1" Margin="10,49,10,0" SelectionChanged="notizlist_SelectionChanged" VerticalAlignment="Top" VerticalContentAlignment="Stretch" Height="474" Grid.Column="5"/>
+        <ListBox x:Name="notizlist" Grid.Row="1" Margin="10,49,10,0" SelectionChanged="notizlist_SelectionChanged" VerticalAlignment="Top" VerticalContentAlignment="Stretch" Height="456" Grid.Column="5"/>
         <Label Grid.Column="3" Content="Notizapp" HorizontalAlignment="Left" Margin="195,0,0,0" VerticalAlignment="Top" Grid.RowSpan="2" Width="154" Height="49" FontSize="30" FontWeight="Bold"/>
     </Grid>
 </Window>

@@ -211,5 +211,12 @@ namespace WPF_Client_Semesterprojekt
         {
             ShowNoteDetails();
         }
+
+        private void abbrechen_Click(object sender, RoutedEventArgs e)
+        {
+            notizlist.SelectedItem = null;
+            Inhalt.Text = "Notiz Inhalt";
+            Ueberschrift.Text = "Notiz Überschrift";
+        }
     }
 }
