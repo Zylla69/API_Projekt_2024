@@ -105,3 +105,28 @@ Der Server basiert auf dem REST-Prinzip und stellt die Endpoints GET-, POST-, PU
     }
   ```
 </details>
+
+<details>
+  <summary>/api/notizen [GET]</summary>
+  
+  **Beschreibung:** Ein Endpunkt zu auslesen der Daten aus der DB.
+  
+  **JSON-Body:**
+  kein JSON-Body notwendig
+
+  **Return-Wert:**
+  ```json
+    [
+    {
+        "id": "665ccf0a13a6af2533257a78",
+        "title": "Notiz Demo",
+        "text": "Einkaufen gehen"
+    },
+    {
+        "id": "665ce1323672316c2f12ae5d",
+        "title": "Einkaufsliste",
+        "text": "Eier"
+    }
+    ]
+  ```
+</details>
