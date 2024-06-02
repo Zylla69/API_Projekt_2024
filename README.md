@@ -112,7 +112,7 @@ Der Server basiert auf dem REST-Prinzip und stellt die Endpoints GET-, POST-, PU
   **Beschreibung:** Ein Endpunkt zu auslesen der Daten aus der DB.
   
   **JSON-Body:**
-  kein JSON-Body notwendig
+  Kein JSON-Body notwendig. ID der Notiz wird an den Pfad des Endpoints angehängt.
 
   **Return-Wert:**
   ```json
@@ -148,3 +148,119 @@ Der Server basiert auf dem REST-Prinzip und stellt die Endpoints GET-, POST-, PU
     }
   ```
 </details>
+
+<details>
+  <summary>/api/notiz/{id} [DELETE]</summary>
+  
+  **Beschreibung:** Ein Endpunkt zum löschen einer Notiz.
+  
+  **JSON-Body:**
+  Kein JSON-Body erforderlich. ID der Notiz wird an den Pfad des Endpoints angehängt.
+
+  **Return-Wert:**
+  Kein JSON-Returnwert.<br>
+  Entweder Status-Code 200 --> OK oder Status-Code 500 --> Internal Server Error 
+
+</details>
+
+<details>
+  <summary>/api/notiz [PUT]</summary>
+  
+  **Beschreibung:** Ein Endpunkt zu überschreiben einer bereits vorhandenen Notiz.
+  
+  **JSON-Body:**
+  ```json
+    {
+    "id": "665ccf0a13a6af2533257a78",
+    "title": "Notiz Demo",
+    "text": "morgen Einkaufen gehen"
+    }
+  ```
+
+  **Return-Wert:**
+  ```json
+    {
+    "id": "665ccf0a13a6af2533257a78",
+    "title": "Notiz Demo",
+    "text": "morgen Einkaufen gehen"
+    }
+  ```
+</details>
+
+#### Weitere Endpunkte
+Natürlich gäbe es noch einige weitere Endpunkte, welche in diesem Projekt aber nicht benötigt wurden.
+
+##Verwendung der API
+
+```mermaid
+graph TD;
+  A[WPF Client] <--> C[Spring Boot Server];
+  B[HTML Client] <--> C[Spring Boot Server];
+  C[Spring-Boot-Server] <--> D[MongoDB Datenbank];
+```
+
+<details>
+  <Summary>Datenbank</summary>
+
+  **Beschreibung:** Aufbau der Speicherung in MongoDB
+
+  **MongoDB Dokument:**
+  ```json
+    {
+  "_id": {
+    "$oid": "665ccf0a13a6af2533257a78"
+  },
+  "text": "morgen Einkaufen gehen",
+  "title": "Notiz Demo"
+}
+  ```
+</details>
+
+</details>
+
+<details>
+  <Summary>Spring-Boot-Server</summary>
+
+  **Beschreibung:** Endpoint Beispiel Spring-Boot-Server in Java
+
+  **Java-Endpoint:**
+  ```java
+    @PostMapping("notiz")
+    @ResponseStatus(HttpStatus.CREATED)
+    public NotizDTO postNotiz(@RequestBody NotizDTO NotizDTO) {
+        return notizService.save(NotizDTO);
+    }
+  ```
+  Für die Aufteilung der Objekte sind im Hintergrund die NotizDTO- und Notiz-Klassen zuständig. Durch das Repository wird dann auf die MongoDB zugegriffen und da Objekt gespeichert. 
+</details>
+
+<details>
+  <Summary>WPF</summary>
+
+  **Beschreibung:** Posten der Notiz im WPF
+
+  **C#:**
+  ```csharp
+    private async void AddNote()
+{
+    try
+    {
+        Notiz newNote = new Notiz { title = Ueberschrift.Text, text = Inhalt.Text };
+        HttpClient client = new HttpClient();
+        string json = JsonSerializer.Serialize(newNote);
+        HttpResponseMessage response = await client.PostAsync(apiUrl + "/notiz", new StringContent(json, System.Text.Encoding.UTF8, "application/json"));
+        response.EnsureSuccessStatusCode();
+        MessageBox.Show("Notiz erfolgreich hinzugefügt.", "Success", MessageBoxButton.OK, MessageBoxImage.Information);
+        LoadNotes();
+    }
+    catch (HttpRequestException ex)
+    {
+        MessageBox.Show($"Error beim hinzufügen der Notiz: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+    }
+}
+  ```
+  Diese Methode fügt eine neue Notiz hinzu, indem sie über einen HTTP-Client eine Anfrage an den Endpoint sendet. Der Titel und der Text der Notiz werden aus den entsprechenden Textfeldern entnommen und in ein Notiz-Objekt konvertiert. Anschließend wird das Notiz-Objekt in JSON serialisiert und eine POST-Anfrage an den Server gesendet. Die Methode wartet auf die Antwort des Servers und stellt sicher, dass die Anfrage erfolgreich war. Falls die Anfrage erfolgreich ist, wird eine Bestätigungsmeldung angezeigt und die Liste der Notizen neu geladen. Im Fehlerfall wird eine Fehlermeldung angezeigt. Vor dem Speichern in der Datenbank werden die ";"-Zeichen in den Notiz-Objekten durch "\r\n" ersetzt, da ";"-Zeichen in der Datenbank nicht erlaubt sind, aber für die Darstellung im Programm essentiell sind.
+</details>
+
+
+
