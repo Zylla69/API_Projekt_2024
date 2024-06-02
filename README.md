@@ -72,4 +72,7 @@ Will der Benutzer eine Notiz aus der Datenbank entfernen muss er zuerst eine Not
 
 ## API-Beschreibung
 
+Der Server basiert auf dem REST-Prinzip und stellt die Endpoints GET-, POST-, PUT- und Delete-Endpoints zur Verfügung. Diese Endpoints stellen sicher, dass der Client mit der Datenbank kommunizieren kann.
+
+
 
