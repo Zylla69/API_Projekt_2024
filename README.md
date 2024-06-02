@@ -337,16 +337,27 @@ classDiagram
 ```mermaid
 sequenceDiagram
     participant Benutzer
-    participant HTML-/WPF-Client
-    participant Spring-Boot-Server
-    participant MongoDB-Datenbank
+    participant GUI
+    participant Backend
 
-    Benutzer->>HTML-/WPF-Client: Anfrage
-    HTML-/WPF-Client->>Spring-Boot-Server: API Aufruf
-    Spring-Boot-Server->>MongoDB-Datenbank: DB Abfrage
-    MongoDB-Datenbank->>Spring-Boot-Server: Daten
-    Spring-Boot-Server->>HTML-/WPF-Client: Antwort
-    HTML-/WPF-Client->>Benutzer: Daten anzeigen
+    Benutzer->>GUI: Klick auf "Hinzufügen" Button
+    GUI->>Backend: Anfrage zum Hinzufügen einer Notiz
+    Backend->>Backend: Neue Notiz erstellen und speichern
+    Backend-->>GUI: Bestätigungsnachricht
+    GUI-->>Benutzer: Notiz erfolgreich hinzugefügt
+
+    Benutzer->>GUI: Auswahl einer Notiz zum Aktualisieren
+    GUI->>Backend: Anfrage zur Aktualisierung der ausgewählten Notiz
+    Backend->>Backend: Notiz aktualisieren und speichern
+    Backend-->>GUI: Bestätigungsnachricht
+    GUI-->>Benutzer: Notiz erfolgreich aktualisiert
+
+    Benutzer->>GUI: Auswahl einer Notiz zum Löschen
+    GUI->>Backend: Anfrage zum Löschen der ausgewählten Notiz
+    Backend->>Backend: Notiz löschen
+    Backend-->>GUI: Bestätigungsnachricht
+    GUI-->>Benutzer: Notiz erfolgreich gelöscht
+
 ```
 
 
