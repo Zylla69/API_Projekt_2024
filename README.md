@@ -20,12 +20,27 @@ Die Notizapp macht es den Benutzer (Client) möglich, mittels Desktop-App oder W
 ## Funktionen der WebApp
 
 ### Erstellen einer Notiz
+
 ![Erstellen einer Notiz](./BilderDoku/Web/Notizhinzufuegen_1.png)
 ![Erstellen einer Notiz](./BilderDoku/Web/NotizSpeichern.png)
-Um eine neu Notiz zu speichern muss man zuerst den blauen Plus-Button drücken, wie in bild 1 dargestellt. Beim drücken des Knopfs öffnet sich ein Fenster welches die Knöpfe Speichern, Abbrechen und Löschen enthält. Beim drücken von Speichern wird die Notiz gespeichert, egal ob man gerade eine neue Notiz erstellt oder eine bereits Vorhandene bearbeitet. Beim drücken vom Abbrechen Knopf wird das Fenster zum hinzufügen/bearbeiten zugeklappt. Wenn man den Löschen Knopf drückt wird die aktuelle Notiz aus der Datenbank gelöscht.
+Um eine neu Notiz zu speichern muss man zuerst den blauen Plus-Button drücken, wie in Bild 1 dargestellt. Beim drücken des Knopfs öffnet sich ein Fenster welches die Knöpfe Speichern, Abbrechen und Löschen enthält. Beim drücken von Speichern wird die Notiz gespeichert, egal ob man gerade eine neue Notiz erstellt oder eine bereits Vorhandene bearbeitet. Beim drücken vom Abbrechen Knopf wird das Fenster zum hinzufügen/bearbeiten zugeklappt. Wenn man den Löschen Knopf drückt wird die aktuelle Notiz aus der Datenbank gelöscht.
 
 ### Anzeigen der Notizen
 
-![Anzeigen der notiz](./BilderDoku/Web/NotizAnzeigen.png)
+![Anzeigen der Notiz](./BilderDoku/Web/NotizAnzeigen.png)
+Wenn eine Notiz via WebApp oder DesktopApp in der Datenbank angelegt hat, kann man diese wieder anzeigen lassen, wenn man auf den Knopf mit dem Titel der benötigten Notiz drückt. So kann man beispielsweise die Notiz löschen oder aktualisieren.
+
+### Ändern einer Notiz
+
+![Anzeigen der Notiz](./BilderDoku/Web/NotizAnzeigen.png)
+![Ändern einer Notiz](./BilderDoku/Web/NotizSpeichern.png)
+Um eine Notiz zu Ändern muss man wie im Schritt zuvor eine der bereits vorhandenen Notizen auswählen und entweder den Inhalt oder den Titel der Notiz bearbeiten. Um das ganze dann in der Datenbank zu Speichern muss man nur noch den Speichern Knopf drücken- Dann sendet die Anwendung ein Request and den Server, welcher die neuen Daten in die Datenbank speichert.
+
+### Löschen der Notiz
+
+![Anzeigen der Notiz](./BilderDoku/Web/NotizAnzeigen.png)
+![Löschen der Notiz](.BilderDoku/Web/NotizSpeichern.png)
+
+
 
 
