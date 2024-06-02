@@ -264,7 +264,7 @@ graph TD;
 </details>
 
 <details>
-  <Summary>HTML Client</summary>
+  <Summary>Web Client</summary>
 
   **Beschreibung:** Posten der Notiz vom HTML-Client aus.
 
@@ -312,7 +312,24 @@ Die Notizapp stellt eine simple und einfache Benutzerfläche als Desktop-Anwendu
 
 ### Hintergründe
 
-Bei der Enwicklung der App wurde der größte Fokus auf die Benutzerfreundlichkeit gelegt. Durch die Verwendung von aktuellen Technologien wie Spring-Boot, WPF, HTML, CSS, JavaScript und JSON ist die API für die Zukunft bestens gerüstet und durch die Nutzung der MongoDb 
+Bei der Enwicklung der App wurde der größte Fokus auf die Benutzerfreundlichkeit gelegt. Durch die Verwendung von aktuellen Technologien wie Spring-Boot, WPF, HTML, CSS, JavaScript und JSON ist die API für die Zukunft bestens gerüstet und die Nutzung von MongoDB sorgt für eine sichere Speicherung und effiziente Datenverwaltung.
 
+### Ausblick
+
+In Zukunft kann die Notiz-App um neue Funktionen erweitert werden, wie die Organisation von Notizen in Ordnern oder Kategorien und die Unterstützung von Rich-Text-Formatierung. Ein Benachrichtigungssystem kann implementiert werdeb, um Benutzer über wichtige Ereignisse zu informieren. Durch kontinuierliches Benutzerfeedback wird die Benutzerfreundlichkeit verbessert, um eine effiziente Notizverwaltung zu ermöglichen.
+
+
+## Diagramme
+
+### Klassendiagramm WPF-Client
+```mermaid
+classDiagram
+    Home o-- Login
+    Home o-- Register
+    Home o-- PaswordForgotten
+    Home o-- Delete
+    Home o-- Chat
+    Home o-- Message
+```
 
 
