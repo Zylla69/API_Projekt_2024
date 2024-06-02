@@ -333,6 +333,30 @@ classDiagram
     }
 ```
 
+### Sequenzdiagramm
+sequenceDiagram
+    participant Benutzer
+    participant GUI
+    participant Backend
+
+    Benutzer->>GUI: Klick auf "Hinzufügen" Button
+    GUI->>Backend: Anfrage zum Hinzufügen einer Notiz
+    Backend->>Backend: Neue Notiz erstellen und speichern
+    Backend-->>GUI: Bestätigungsnachricht
+    GUI-->>Benutzer: Notiz erfolgreich hinzugefügt
+
+    Benutzer->>GUI: Auswahl einer Notiz zum Aktualisieren
+    GUI->>Backend: Anfrage zur Aktualisierung der ausgewählten Notiz
+    Backend->>Backend: Notiz aktualisieren und speichern
+    Backend-->>GUI: Bestätigungsnachricht
+    GUI-->>Benutzer: Notiz erfolgreich aktualisiert
+
+    Benutzer->>GUI: Auswahl einer Notiz zum Löschen
+    GUI->>Backend: Anfrage zum Löschen der ausgewählten Notiz
+    Backend->>Backend: Notiz löschen
+    Backend-->>GUI: Bestätigungsnachricht
+    GUI-->>Benutzer: Notiz erfolgreich gelöscht
+
 
 ## Quellenverzeichnis
 
@@ -354,7 +378,6 @@ classDiagram
 #### [MongoDB](https://www.mongodb.com/docs/)
 
 ### IDE & Nuggets
-#### [WebStrom 2024.1.2](https://www.jetbrains.com/webstorm/download/download-thanks.html?platform=windows)
 #### [IntelliJ IDEA 2024.1.1](https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows)
    - ###### [Spring Boot Starter Data MongoDB 3.2.5](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-mongodb/1.1.0.RELEASE)
    - ###### [Spring Boot Starter Web 3.2.5](https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-web)
