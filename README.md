@@ -259,8 +259,60 @@ graph TD;
     }
 }
   ```
-  Diese Methode fügt eine neue Notiz hinzu, indem sie über einen HTTP-Client eine Anfrage an den Endpoint sendet. Der Titel und der Text der Notiz werden aus den entsprechenden Textfeldern entnommen und in ein Notiz-Objekt konvertiert. Anschließend wird das Notiz-Objekt in JSON serialisiert und eine POST-Anfrage an den Server gesendet. Die Methode wartet auf die Antwort des Servers und stellt sicher, dass die Anfrage erfolgreich war. Falls die Anfrage erfolgreich ist, wird eine Bestätigungsmeldung angezeigt und die Liste der Notizen neu geladen. Im Fehlerfall wird eine Fehlermeldung angezeigt. Vor dem Speichern in der Datenbank werden die ";"-Zeichen in den Notiz-Objekten durch "\r\n" ersetzt, da ";"-Zeichen in der Datenbank nicht erlaubt sind, aber für die Darstellung im Programm essentiell sind.
+  Diese Methode fügt eine neue Notiz hinzu, indem sie über einen HTTP-Client eine Anfrage an den Endpoint sendet. Der Titel und der Text der Notiz werden aus den entsprechenden Textfeldern entnommen und in ein Notiz-Objekt konvertiert. Anschließend wird das Notiz-Objekt in JSON serialisiert und eine POST-Anfrage an den Server gesendet. Die Methode wartet auf die Antwort des Servers und stellt sicher, dass die Anfrage erfolgreich war. Falls die Anfrage erfolgreich ist, wird eine Bestätigungsmeldung angezeigt und die Liste der Notizen neu geladen. Im Fehlerfall wird eine Fehlermeldung angezeigt.
+  
 </details>
+
+<details>
+  <Summary>HTML Client</summary>
+
+  **Beschreibung:** Posten der Notiz vom HTML-Client aus.
+
+  **JS-Code:**
+ ```js
+    // Funktion zum Speichern einer neuen Notiz über AJAX
+    function saveNote(title, content) {
+        const xhr = new XMLHttpRequest();
+        xhr.open("POST", "http://localhost:8080/api/notiz", true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 201) {
+                    const response = JSON.parse(xhr.responseText);
+                    displayNote(response.id, response.title, response.text);
+                    hideNoteForm();
+                    resetForm();
+                    loadAllNotes(); // Hier wird loadAllNotes aufgerufen
+                } else {
+                    console.error("Fehler beim Speichern der Notiz.");
+                }
+            }
+        };
+
+        const data = JSON.stringify({ title: title, text: content });
+        xhr.send(data);
+    }
+  ```
+  Diese Funktion sendet eine HTTP POST-Anfrage an den angegebenen Endpunkt, um eine neue Notiz zu speichern. Sie akzeptiert den Titel und den Inhalt der Notiz als Parameter. Zunächst wird ein XMLHttpRequest-    
+  Objekt erstellt und eine POST-Anfrage zum angegebenen Endpunkt geöffnet. Der Content-Type-Header wird auf "application/json" gesetzt, um anzugeben, dass die Daten im JSON-Format gesendet werden. Eine Callback- 
+  Funktion wird registriert, um auf Änderungen im Status der Anfrage zu reagieren.  Wenn die Anfrage abgeschlossen ist (readyState === XMLHttpRequest.DONE), wird der Statuscode überprüft. Bei einem erfolgreichen 
+  Statuscode 201 (Created) wird die Antwort geparst und die neue Notiz angezeigt. Das Notiz-Formular wird ausgeblendet und zurückgesetzt, und anschließend werden alle Notizen neu geladen, um die Liste zu 
+  aktualisieren. Im Falle eines Fehlers wird eine Fehlermeldung in der Konsole ausgegeben. Abschließend werden die Notizdaten in JSON konvertiert und mit der Anfrage gesendet.
+</details>
+
+
+## Diskussion der Ergebnisse
+
+Am Ende dieser monatelangen Enwicklung stelle ich die erste Version der Notizapp vor. Durch die einfache und simple Benutzeroberfläche in WPF als auch im Web, wird das Erstellen, Bearbeiten und Löschen von Notizen ein Kinderspiel. Durch die zuverlässige MongoDB-Datenbank werden die Daten sicher gespeichert und sind jederzeit abrufbar.
+
+### Zusammenfassung 
+
+Die Notizapp stellt eine simple und einfache Benutzerfläche als Desktop-Anwendung als auch WebApp zur Verfügung. Die REST-API ermöglicht den Clients die Echtzeitkommunikation mit der Datenbank.
+
+### Hintergründe
+
+Bei der Enwicklung der App wurde der größte Fokus auf die Benutzerfreundlichkeit gelegt. Durch die Verwendung von aktuellen Technologien wie Spring-Boot, WPF, HTML, CSS, JavaScript und JSON ist die API für die Zukunft bestens gerüstet und durch die Nutzung der MongoDb 
 
 
 
