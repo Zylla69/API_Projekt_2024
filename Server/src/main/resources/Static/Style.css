@@ -1,0 +1,123 @@
+body {
+    background-color: #2e2e2e;
+    color: #f1f1f1;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #444;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+    text-align: center;
+}
+
+.note-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.note-list-item {
+    margin-bottom: 10px;
+}
+
+.note-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #555;
+    color: #fff;
+    cursor: pointer;
+    text-align: left;
+}
+
+.note-button:hover {
+    background-color: #666;
+}
+
+.add-note-button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    line-height: 50px;
+}
+
+.add-note-button:hover {
+    background-color: #3399ff;
+}
+
+.note-form {
+    display: none;
+    flex-direction: column;
+}
+
+.note-form input,
+.note-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #555;
+    color: #fff;
+}
+
+.note-form button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.note-form button[type="submit"] {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.note-form button[type="submit"]:hover {
+    background-color: #45c264;
+}
+
+.note-form button[type="button"] {
+    background-color: #dc3545;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.note-form button[type="button"]:hover {
+    background-color: #ff5c75;
+}
+
+#delete-note-button {
+    background-color: #ff0000;
+    margin-top: 10px;
+}
+
+#delete-note-button:hover {
+    background-color: #ff4d4d;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-group button {
+    flex: 1;
+    margin: 5px;
+}
+
