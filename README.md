@@ -83,4 +83,25 @@ Der Server basiert auf dem REST-Prinzip und stellt die Endpoints GET-, POST-, PU
   **Beschreibung:** Dieser Endpunkt muss vor jedem spezifischen Endpunkt stehen.
 </details>
 
+<details>
+  <summary>/api/notiz [POST]</summary>
+  
+  **Beschreibung:** Ein Endpunkt zum speichern von Daten in der Datenbank.
+  
+  **JSON-Body:**
+  ```json
+    {
+    "title": "Einkaufsliste",
+    "text": "Eier"
+    }
+  ```
 
+  **Return-Wert:**
+  ```json
+    {
+    "id": "665ce1323672316c2f12ae5d",
+    "title": "Einkaufsliste",
+    "text": "Eier"
+    }
+  ```
+</details>
