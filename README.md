@@ -21,5 +21,7 @@ Die Notizapp macht es den Benutzer (Client) möglich, mittels Desktop-App oder W
 
 ### Erstellen einer Notiz
 ![Erstellen einer Notiz](./BilderDoku/Web/Notizhinzufuegen_1.png)
-![Erstellen einer Notiz](./BilderDoku/Web/Notizhinzufuegen_2.png)
+![Erstellen einer Notiz](./BilderDoku/Web/NotizSpeichern.png)
+Um eine neu Notiz zu speichern muss man zuerst den blauen Plus-Button drücken, wie in bild 1 dargestellt. Beim drücken des Knopfs öffnet sich ein Fenster welches die Knöpfe Speichern, Abbrechen und Löschen enthält. Beim drücken von Speichern wird die Notiz gespeichert, egal ob man gerade eine neue Notiz erstellt oder eine bereits Vorhandene bearbeitet.
+
 
