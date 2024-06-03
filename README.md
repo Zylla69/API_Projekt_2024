@@ -190,7 +190,7 @@ Der Server basiert auf dem REST-Prinzip und stellt die Endpoints GET-, POST-, PU
 #### Weitere Endpunkte
 Natürlich gäbe es noch einige weitere Endpunkte, welche in diesem Projekt aber nicht benötigt wurden.
 
-##Verwendung der API
+## Verwendung der API
 
 ```mermaid
 graph TD;
